@@ -51,7 +51,6 @@ func add(value int) {
 			node.right = newNode
 		}
 		tree.size++
-		tree.depth++
 	}
 }
 
