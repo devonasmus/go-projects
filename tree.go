@@ -22,13 +22,13 @@ var tree Tree
 
 func iterate(value int, node *Node) *Node {
 	if value < node.value {
-		if node.left == null {
+		if node.left == nil {
 			return node
 		} else {
 			iterate(value, node.left)
 		}
 	} else if value > node.value {
-		if node.right == null {
+		if node.right == nil {
 			return node
 		} else {
 			iterate(value, node.right)
@@ -37,10 +37,9 @@ func iterate(value int, node *Node) *Node {
 }
 
 func add(value int) {
-	newNode := Node{value, null, null}
-	if tree == null {
-		tree = Tree{null, 0, 0}
-		tree.root = newNode
+	newNode := &Node{value, nil, nil}
+	if tree == nil {
+		tree = Tree{newNode, 0, 0}
 		tree.size++
 		tree.depth++
 	} else {
@@ -55,13 +54,13 @@ func add(value int) {
 }
 
 func makeSlice(node *Node, slice []int) {
-	if node.left != null {
+	if node.left != nil {
 		makeArray(node.left)
 	}
 
 	slice = append(slice, node.value)
 
-	if node.right != null {
+	if node.right != nil {
 		makeArray(node.right)
 	}
 }

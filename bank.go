@@ -2,8 +2,6 @@ package main
 
 import(
 	"fmt"
-	"strings"
-	"math/rand"
 )
 
 type Account struct {
@@ -94,7 +92,7 @@ func balance(w Wallet) {
 	}
 }
 
-func wire(w Wallet, source Account, target Account, amount float64) {
+func wireWallet(w Wallet, source Account, target Account, amount float64) {
 	included := false
 	for i := 0; i < len(w.accounts); i++ {
 		if w.accounts[i] == source {
