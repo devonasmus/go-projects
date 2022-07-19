@@ -1,8 +1,7 @@
 package main
 
 import(
-	"fmt"
-	"math/rand"
+	"time"
 )
 
 func Now(w http.ResponseWriter,_ *http.Request){
